@@ -6,6 +6,7 @@ const Preview = ({ image, topCaption, bottomCaption }) => {
 
   useEffect(() => {
     canvasRef.current && drawCanvas();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [topCaption, bottomCaption]);
 
   const drawCanvas = () => {
@@ -20,7 +21,7 @@ const Preview = ({ image, topCaption, bottomCaption }) => {
     ctx.fillText(topCaption, 150 - topCaption.length * 7, 35);
     ctx.fillText(bottomCaption, 150 - bottomCaption.length * 7, (image.height * 300) / image.width - 30);
     if (!image.id) {
-      const dataURL = canvas.toDataURL();
+      // const dataURL = canvas.toDataURL();
     }
   };
 
