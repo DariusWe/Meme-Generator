@@ -3,7 +3,7 @@ import Preview from "./components/preview/preview.component";
 import MemeSlider from "./components/meme-slider/meme-slider.component";
 import EditingSection from "./components/editing-section/editing-section.component";
 
-// Problem: Preview is waiting for all images to be loaded. Takes a few seconds.
+// Problem: In Firefox, lazy load does not seem to work. Preview is waiting for all images to be loaded.
 
 function App() {
   return (

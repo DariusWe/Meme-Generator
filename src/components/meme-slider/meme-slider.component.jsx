@@ -20,6 +20,7 @@ const MemeSlider = () => {
       {images &&
         images.map((image) => (
           <img
+            loading="lazy"
             key={image.id}
             src={image.url}
             alt={image.name}
