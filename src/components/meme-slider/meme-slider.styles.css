@@ -1,0 +1,11 @@
+.meme-slider {
+    display: flex;
+    width: 50vw;
+    height: 100px;
+    gap: 10px;
+    overflow-x: scroll;
+  }
+  
+  .meme-slider img {
+    cursor: pointer;
+  }

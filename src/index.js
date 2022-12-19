@@ -1,12 +1,15 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import App from "./App";
+import { ActiveMemeProvider } from "./contexts/active-meme.context";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <>
-    <App />
+    <ActiveMemeProvider>
+      <App />
+    </ActiveMemeProvider>
   </>
 );
 
