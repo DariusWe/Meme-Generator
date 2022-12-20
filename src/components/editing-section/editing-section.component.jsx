@@ -34,15 +34,20 @@ const EditingSection = () => {
 
   return (
     <div className="editing-section">
-      <label htmlFor="uploaded-img">Upload an image:</label>
-      <input type="file" id="uploaded-img" accept=".png, .jpg, .jpeg" onChange={handleUploadedImage} />
+      <label htmlFor="upload-img" className="file-upload-button">
+        Upload an image:
+      </label>
+      <input type="file" id="upload-img" accept=".png, .jpg, .jpeg" onChange={handleUploadedImage} />
       <label htmlFor="top-caption">Caption Top:</label>
       <input id="top-caption" type="text" onChange={(e) => setTopCaption(e.target.value)} value={topCaption} />
       <label htmlFor="bottom-caption">Caption Bottom:</label>
       <input id="bottom-caption" type="text" onChange={(e) => setBottomCaption(e.target.value)} value={bottomCaption} />
-      <a href={downloadUrl} download>
-        Download Meme
-      </a>
+      <button>
+        <a href={downloadUrl} download>
+          Download Meme
+        </a>
+      </button>
+      <button>Save to public gallery</button>
     </div>
   );
 };

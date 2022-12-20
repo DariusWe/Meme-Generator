@@ -2,6 +2,8 @@ import "./preview.styles.css";
 import { useRef, useEffect, useContext } from "react";
 import { ActiveMemeContext } from "../../contexts/active-meme.context";
 
+const CANVAS_WIDTH = 300;
+
 const Preview = () => {
   const { previewImage, topCaption, bottomCaption, setDownloadUrl } = useContext(ActiveMemeContext);
   const canvasRef = useRef(null);
@@ -14,14 +16,16 @@ const Preview = () => {
   const drawCanvas = () => {
     const canvas = canvasRef.current;
     const ctx = canvas.getContext("2d");
+    const canvasHeight = (previewImage.height / previewImage.width) * CANVAS_WIDTH;
     const img = document.getElementById("source");
-    ctx.drawImage(img, 0, 0, 300, (previewImage.height / previewImage.width) * 300);
+    ctx.drawImage(img, 0, 0, CANVAS_WIDTH, canvasHeight);
     ctx.font = "24px sans-serif";
+    ctx.textAlign = 'center';
     ctx.fillStyle = "white";
     ctx.shadowColor = "black";
     ctx.shadowBlur = 5;
-    ctx.fillText(topCaption, 150 - topCaption.length * 7, 35);
-    ctx.fillText(bottomCaption, 150 - bottomCaption.length * 7, (previewImage.height * 300) / previewImage.width - 30);
+    ctx.fillText(topCaption, CANVAS_WIDTH / 2, 35);
+    ctx.fillText(bottomCaption, CANVAS_WIDTH / 2, canvasHeight - 30);
     const dataURL = canvas.toDataURL();
     setDownloadUrl(dataURL);
   };
