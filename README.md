@@ -1,4 +1,4 @@
-Meme generator built with React. Live site on netlify:
+A small coding challenge which revolves around the problem of merging an image with text in the browser and making it downloadable for the user. Live on netlify:
 
 https://strong-choux-8c1e3c.netlify.app/
 
