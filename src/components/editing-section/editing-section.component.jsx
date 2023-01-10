@@ -47,7 +47,6 @@ const EditingSection = () => {
           Download Meme
         </a>
       </button>
-      <button>Save to public gallery</button>
     </div>
   );
 };
